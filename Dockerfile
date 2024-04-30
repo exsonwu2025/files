@@ -20,7 +20,7 @@ RUN echo '}' >> /root/config.json
 RUN echo 'nohup /root/warp-plus -c /root/config.json &'>> /root/wpp.sh && chmod +x /root/wpp.sh
 EXPOSE 8881
 WORKDIR /root
-CMD ["sh", "/root/wpp.sh"]
+CMD ["bash", "/root/wpp.sh"]
 #password for user login
 RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 EXPOSE 22
